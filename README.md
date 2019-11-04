@@ -44,7 +44,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string||
 |image_url|text||
 |detail|text||
 |fee|integer||
