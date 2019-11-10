@@ -4,10 +4,10 @@
       .upper-contents__left
         = link_to "/", class: "upper-contents__left__icon" do
           = image_tag "toppage/emblemmatic-techlog-logo-268.png", class: "upper-contents__left__icon__src", alt: "Mercari"
-      %form.form
-        %input.form__search{name: "", placeholder: "何かお探しですか？", type: "search", value: ""}
-        %button.form__button
-          = fa_icon "search", clss: "search-icon"
+      -# %form.form
+      -#   %input.form__search{name: "", placeholder: "何かお探しですか？", type: "search", value: ""}
+      -#   %button.form__button
+      -#     = fa_icon "search", clss: "search-icon"
     .lower-wrapper
       .lower-contents
         .lower-contents__left
@@ -29,27 +29,28 @@
                             - ch_category.children.each do |gr_category|
                               %li.grand-child-category-box
                                 = link_to "#{gr_category.name}", category_path(gr_category.id), class:"drop-link"
-
-
-
-
           = link_to "", class: "lower-contents__left__search-2" do
             %svg.genre-icon{"aria-hidden": "true", height: "16", viewbox: "0 0 23 16", width: "23"}
               %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
             場所から探す
         .lower-contents__right
-          -# - if user_signed_in?
+          - if user_signed_in?
             .lower-contents__right__mypage
-              = link_to user_path(current_user), class: "lower-contents__right__mypage__button" do
-                - if current_user.icon_image.present?
-                  = image_tag "#{current_user.icon_image}", class: "header-user-icon"
+              = link_to schools_path(current_user), class: "lower-contents__right__mypage__button" do
+                - if current_user.image_url.present?
+                  = image_tag "#{current_user.image_url}", class: "header-user-icon"
                 - else
                   = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", class: "header-user-icon"
-                .mypage-link マイページ
+                .mypage-link
+                  #{current_user.nickname}さんようこそ！
+
+            .lower-contents__right__logout
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'lower-contents__right__logout__button'
+
           - else
             .lower-contents__right__sign-up
-              = link_to sign_up_signup_index_path, class: "lower-contents__right__sign-up__button" do
-                新規会員登録
+              = link_to new_user_registration_path, class: "lower-contents__right__sign-up__button" do
+                新規登録
             .lower-contents__right__log-in
               = link_to new_user_session_path, class: "lower-contents__right__log-in__button" do
                 ログイン
