@@ -1,0 +1,10 @@
+%nav.bread-container
+  - case params.values_at :controller, :action
+
+    - when ['schools','index']
+    - breadcrumb :top
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+    - when ['schools','show']
+    - breadcrumb :school_show
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
