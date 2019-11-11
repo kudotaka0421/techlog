@@ -1,4 +1,5 @@
 = render partial: 'schools/header', locals: { }
+= render partial: 'schools/bread-crumbs', locals: { }
 
 .item-detail-wrapper
 
@@ -20,22 +21,19 @@
         %tbody
           %tr
             %th
-              出品者
+              評価平均
             %td
               = link_to "#{current_user.nickname}", class: "td__user-name"
               -# = link_to @user.nickname, user_path(@item.seller), class: "td__user-name"
               .item-user__information
                 .item-user__ratings
                   = fa_icon 'laugh',class:"icon-good"
-                  %span 64
                 .item-user__ratings
                   = fa_icon 'meh',class:"icon-normal"
-                  %span 1
                 .item-user__ratings
                   = fa_icon 'frown-open',class:"icon-bad"
-                  %span 1
           %tr
-            %th カテゴリー
+            %th 場所
             %td
               %ul
                 %li
@@ -50,20 +48,20 @@
                     = fa_icon 'chevron-right'
                     -# = @item.category.name
           %tr
-            %th ブランド
+            %th 学べる言語
             %td
-              = link_to 'コーチ', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
+              = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
 
           %tr
-            %th 商品の状態
+            %th おすすめコース
             %td
               -# = @item.item_status
           %tr
-            %th 配送料の負担
+            %th 料金
             %td
               -# = @item.delivery_charged
           %tr
-            %th 配送の方法
+            %th こだわりポイント
             %td
               -# = @item.delivery_method
           %tr
@@ -199,5 +197,4 @@
                 .item__iine
                   = fa_icon 'heart-o'
                   6
-
-= render partial: 'schools/footer', locals: { }
+= render partial: '/schools/footer', locals: { }
