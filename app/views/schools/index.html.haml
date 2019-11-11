@@ -3,21 +3,21 @@
   = image_tag "toppage/main_m.jpg", class: "back-image"
   .popularity-index
     %h2.index-genre
-      人気のスクール
+      あなたにオススメのスクールを探す
     %div.genre
       %ul.genre__wrapper
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            評価が高い
+            評価が高いスクールから探す
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            コメントが多い
+            場所から探す
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            オンラインで学べる
+            言語から探す
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            転職サポートがある
+            こだわり条件から探す
 
   .wrapper
     .items
@@ -45,7 +45,7 @@
                       SOLD
         .items__genre__title
           %h3.items__genre__title__text
-            コメントが多いスクール
+            場所
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
@@ -66,7 +66,7 @@
                       SOLD
         .items__genre__title
           %h3.items__genre__title__text
-            オンラインで学べるスクール
+            言語
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
@@ -87,7 +87,7 @@
                       SOLD
         .items__genre__title
           %h3.items__genre__title__text
-            転職サポートがあるスクール
+            こだわり条件
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'

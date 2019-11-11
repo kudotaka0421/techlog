@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :schools, only: [:index]
+  devise_for :users
+  resources :schools, only: [:index,:show]
   root 'schools#index'
 end
