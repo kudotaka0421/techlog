@@ -3,21 +3,54 @@
   = image_tag "toppage/main_m.jpg", class: "back-image"
   .popularity-index
     %h2.index-genre
-      あなたにオススメのスクールを探す
+      場所から探す
     %div.genre
       %ul.genre__wrapper
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            評価が高いスクールから探す
+            東京
+            = image_tag "https://takeshi.top/wp-content/uploads/2017/06/prosch-sejuku.png", class:"genre__wrapper__list__image"
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            場所から探す
+            横浜
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            言語から探す
+            名古屋
         %li.genre__wrapper__list
           = link_to "", class: "genre__wrapper__list__name" do
-            こだわり条件から探す
+            大阪
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            福岡
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            オンライン
+
+  .popularity-index
+    %h2.index-genre
+      言語から探す
+    %div.genre
+      %ul.genre__wrapper
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            Ruby
+            = image_tag "https://takeshi.top/wp-content/uploads/2017/06/prosch-sejuku.png", class:"genre__wrapper__list__image"
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            Python
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            PHP
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            JavaScript
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            Go
+        %li.genre__wrapper__list
+          = link_to "", class: "genre__wrapper__list__name" do
+            Swift
+
 
   .wrapper
     .items
