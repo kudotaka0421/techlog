@@ -20,20 +20,21 @@
     // 写真(左)＆出品者情報(右)
     .item-main-content {
       margin: 16px 0 0;
-      display: flex;
+      // display: flex;
       justify-content: space-between;
 
       // 写真(左)
       .item__photos {
         float: left;
-        min-width: 300px;
-        max-width: 300px;
-        min-height: 375px;
+        // min-width: 300px;
+        width: 600px;
+        // min-height: 375px;
+        height: 375px;
         line-height: 0;
         position: relative;
         .item__main-photo {
-          width: 300px;
-          height: 300px;
+          width: 600px;
+          height: 375px;
         }
         // 売り切れの時の表示
         .items-box_photo__sold{
@@ -69,8 +70,8 @@
       }
       // 出品者情報(右)
       table.item-detail-table {
-        width: 300px;
-        height: 420px;
+        width: 600px;
+        height: 200px;
         tbody {
           font-size: 14px;
           tr {
@@ -78,6 +79,8 @@
               border: 1px solid #F5F5F5;
               background-color: #FAFAFA;
               padding: 8px;
+              width:130px;
+              text-align: center;
             }
             td {
               border: 1px solid #F5F5F5;

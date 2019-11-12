@@ -19,58 +19,57 @@
         -#       SOLD
       %table.item-detail-table
         %tbody
+          -# %tr
+          -#   %th
+          -#     評価平均
+          -#   %td
+          -#     = link_to "#{current_user.nickname}", class: "td__user-name"
+          -#     -# = link_to @user.nickname, user_path(@item.seller), class: "td__user-name"
+          -#     .item-user__information
+          -#       .item-user__ratings
+          -#         = fa_icon 'laugh',class:"icon-good"
+          -#       .item-user__ratings
+          -#         = fa_icon 'meh',class:"icon-normal"
+          -#       .item-user__ratings
+          -#         = fa_icon 'frown-open',class:"icon-bad"
           %tr
-            %th
-              評価平均
+            %th 口コミ評価
             %td
-              = link_to "#{current_user.nickname}", class: "td__user-name"
-              -# = link_to @user.nickname, user_path(@item.seller), class: "td__user-name"
-              .item-user__information
-                .item-user__ratings
-                  = fa_icon 'laugh',class:"icon-good"
-                .item-user__ratings
-                  = fa_icon 'meh',class:"icon-normal"
-                .item-user__ratings
-                  = fa_icon 'frown-open',class:"icon-bad"
           %tr
             %th 場所
             %td
               %ul
                 %li
-                  = link_to '#', class:"list__category" do
-                    -# = @item.category.parent.parent.name
-                %li
-                  = link_to '#', class:"list__category" do
-                    = fa_icon 'chevron-right'
-                    -# = @item.category.parent.name
-                %li
-                  = link_to '#', class:"list__category" do
-                    = fa_icon 'chevron-right'
-                    -# = @item.category.name
+                  - @school.locations.each do |shool_location|
+                    = shool_location.name
           %tr
             %th 学べる言語
             %td
-              = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
+              %ul
+                %li
+                  - @school.languages.each do |shool_language|
+                    = shool_language.name
+              -# = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
 
           %tr
             %th おすすめコース
             %td
               -# = @item.item_status
-          %tr
-            %th 料金
-            %td
+          -# %tr
+          -#   %th 料金
+          -#   %td
               -# = @item.delivery_charged
           %tr
             %th こだわりポイント
             %td
               -# = @item.delivery_method
-          %tr
-            %th 配送元地域
-            %td
-              -# = link_to "#{@item.delivery_area}", '#', class:"td__area"
-          %tr
-            %th 発送日の目安
-            %td
+          -# %tr
+          -#   %th 配送元地域
+          -#   %td
+          -#     -# = link_to "#{@item.delivery_area}", '#', class:"td__area"
+          -# %tr
+          -#   %th 発送日の目安
+          -#   %td
               -# = @item.delivery_shipping_date
 
 
