@@ -63,7 +63,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|integer|null: false|
 
 ### Association
 - has_many :school_languages
@@ -86,7 +86,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|location|string|null: false|
+|name|integer|null: false|
 
 ### Association
 - has_many :school_locations
