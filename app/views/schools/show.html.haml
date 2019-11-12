@@ -40,20 +40,16 @@
             %td
               %ul
                 %li
-                  = link_to '#', class:"list__category" do
-                    -# = @item.category.parent.parent.name
-                %li
-                  = link_to '#', class:"list__category" do
-                    = fa_icon 'chevron-right'
-                    -# = @item.category.parent.name
-                %li
-                  = link_to '#', class:"list__category" do
-                    = fa_icon 'chevron-right'
-                    -# = @item.category.name
+                  - @school.locations.each do |shool_location|
+                    = shool_location.name
           %tr
             %th 学べる言語
             %td
-              = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
+              %ul
+                %li
+                  - @school.languages.each do |shool_language|
+                    = shool_language.name
+              -# = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
 
           %tr
             %th おすすめコース
