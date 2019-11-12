@@ -22,86 +22,82 @@
   .wrapper
     .items
       .items__genre
+
         .items__genre__title
           %h3.items__genre__title__text
-            評価が高いスクール
+            レビュー数ランキング
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
         .item-index
           .items
-            -# - @ladies_items.each do |la_item|
+            - @schools.each do |school|
               .item
-                = link_to item_path(la_item), class: "item-link" do
-                  = image_tag "#{la_item.images[0].image}", class:"item__image"
-                  %span.item__price
-                    = "¥#{la_item.total_price.to_s(:delimited)}"
+                = link_to school_path(school), class: "item-link" do
+                  = image_tag "#{school.image_url}", class:"item__image"
+                  -# %span.item__price
+                  -#   = "¥#{me_item.total_price.to_s(:delimited)}"
                   .item__name
                     %span.item__name__text
-                      = la_item.name
-                -if la_item.buyer_id.present?
-                  .items-box_photo__sold
-                    .items-box_photo__sold__inner
-                      SOLD
+                      = school.name
+
+
         .items__genre__title
           %h3.items__genre__title__text
-            場所
+            高評価ランキング
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
         .item-index
           .items
-            -# - @mens_items.each do |me_item|
+            - @schools.each do |school|
               .item
-                = link_to item_path(me_item), class: "item-link" do
-                  = image_tag "#{me_item.images[0].image}", class:"item__image"
-                  %span.item__price
-                    = "¥#{me_item.total_price.to_s(:delimited)}"
+                = link_to school_path(school), class: "item-link" do
+                  = image_tag "#{school.image_url}", class:"item__image"
+                  -# %span.item__price
+                  -#   = "¥#{me_item.total_price.to_s(:delimited)}"
                   .item__name
                     %span.item__name__text
-                      = me_item.name
-                -if me_item.buyer_id.present?
-                  .items-box_photo__sold
-                    .items-box_photo__sold__inner
-                      SOLD
+                      = school.name
+
+
         .items__genre__title
           %h3.items__genre__title__text
-            言語
+            今オススメのスクールランキング
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
         .item-index
           .items
-            -# - @electrical_appliance_items.each do |el_item|
+            - @schools.each do |school|
               .item
-                = link_to item_path(el_item), class: "item-link" do
-                  = image_tag "#{el_item.images[0].image}", class:"item__image"
-                  %span.item__price
-                    = "¥#{el_item.total_price.to_s(:delimited)}"
+                = link_to school_path(school), class: "item-link" do
+                  = image_tag "#{school.image_url}", class:"item__image"
+                  -# %span.item__price
+                  -#   = "¥#{me_item.total_price.to_s(:delimited)}"
                   .item__name
                     %span.item__name__text
-                      = el_item.name
-                -if el_item.buyer_id.present?
-                  .items-box_photo__sold
-                    .items-box_photo__sold__inner
-                      SOLD
+                      = school.name
+
+
+
         .items__genre__title
           %h3.items__genre__title__text
-            こだわり条件
+            こだわり条件から探す
           = link_to "", class: "see-more" do
             もっと見る
             =fa_icon 'chevron-right'
         .item-index
           .items
-            -# - @toy_hobby_items.each do |to_item|
+            - @schools.each do |school|
               .item
-                = link_to item_path(to_item), class: "item-link" do
-                  = image_tag "#{to_item.images[0].image}", class:"item__image"
-                  %span.item__price
-                    = "¥#{to_item.total_price.to_s(:delimited)}"
+                = link_to school_path(school), class: "item-link" do
+                  = image_tag "#{school.image_url}", class:"item__image"
+                  -# %span.item__price
+                  -#   = "¥#{me_item.total_price.to_s(:delimited)}"
                   .item__name
                     %span.item__name__text
-                      = to_item.name
+                      = school.name
 
 
 -# = render partial: 'items/sell-icon', locals: { }
