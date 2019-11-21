@@ -3,7 +3,8 @@ crumb :top do
 end
 
 crumb :school_show do
-  link 'スクール詳細', school_path
+  @school = School.find(params[:id])
+  link "#{@school.name}", school_path
   parent :top
 end
 
