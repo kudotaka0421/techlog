@@ -1,7 +1,7 @@
 class Language < ApplicationRecord
 
   enum  name: {
-    "Ruby":1, "PHP":2,"Python":3,"Java":4,"HTML,CSS":5,
+    "Ruby":1, "PHP":2,"Python":3,"Java":4,"HTML / CSS":5,
   }
 
 
