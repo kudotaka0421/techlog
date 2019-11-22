@@ -1,0 +1,91 @@
+.single-container
+  = render partial: 'schools/header', locals: { }
+  = render partial: 'schools/bread-crumbs', locals: { }
+
+  %main.single-main
+    %section.sell-main
+      .sell-container
+        .sell-container__inner
+          %h2.sell-container__inner__title 追加するスクールの情報を入力
+          = form_for @school, html: {class: "sell-form"} do |f|
+            .sell-upload
+              %h3.sell-upload__head
+                スクール画像
+                %span.form-require 必須
+              %p.sell-upload__text
+              .sell-upload__box
+                .sell-upload-items
+                  %ul
+                = f.fields_for :images do |f_image|
+                  = f_image.file_field :image_url, type: "file", multiple: true,  name: "item[images_attributes][][image]", class: "upload-drop-file sell-upload__box__items-have"
+              %pre
+                :preserve
+                  クリックしてファイルをアップロード
+            .sell-content
+              .form-group
+                %label.form-group__name
+                  スクール名
+                  %span.form-require 必須
+                %div
+                  = f.text_field :name, class: "input-default", placeholder: "例)TECH::EXPERT（必須 40文字まで)", value: ""
+              .form-group-next
+                %label.form-group-next__name
+                  スクールの説明
+                  %span.form-require 必須
+                = f.text_area :detail, class: "textarea-default", placeholder: "例)テックエキスパートは、6月から受講料が値上がりし、SNSなどで悪い意味で話題になっていました。ですが、むしろ受講生は増えていて、受講したくても受講できないくらい応募が殺到しています。口コミ調査の結果としては、バリバリ学習を進めている人が多く、高額なだけあってか、受講生は本気であるという印象を受けます。（必須 1,000文字以内）", rows: "5"
+              .form-group-next
+                %label.form-group-next__name
+                  オススメのコース
+                  %span.form-require 必須
+                = f.text_field :detail, class: "textarea-default", placeholder: "例)転職コース（必須 40文字まで)", rows: "2"
+              .form-group-next
+                %label.form-group-next__name
+                  こんな人にマッチ
+                  %span.form-require 必須
+                = f.text_field :detail, class: "textarea-default", placeholder: "例)プログラミングの基礎を身につけてから転職したい人（必須 40文字まで)", rows: "5"
+            .sell-content
+              .sell-form-wrapper
+                %h3.sell-sub-head スクールの詳細
+                .sell-form-box
+                  #form-group-first.form-group-first
+                    %label.form-group-first__name
+                      スクール所在地
+                      %span.form-require 必須
+                    #select-wrap
+                    .field
+                      - %w(東京 大阪 名古屋 福岡 オンライン).each.with_index do |location,i|
+                        %label
+                          = check_box_tag 'samurai[ingredients][]', ingredient,false,id:"samurai_ingredients_#{i}"
+                          = ingredient
+                      -# = f.select :location_id, prompt: "---"
+                      -# = f.select :category_id, @category_parents, prompt: "---"
+                  .form-group-second
+                    %label.form-group-second__name
+                      学べる言語
+                      %span.form-require 必須
+                    .select-wrap
+
+            .sell-content.sell-btn-box
+              %div
+                -# %p.text
+                -#   = link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", target: "_blank" do
+                -#     禁止されている出品
+                -#   、
+                -#   = link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", target: "_blank" do
+                -#     行為
+                -#   を必ずご確認ください。
+                -# %p.text
+                -#   またブランド品でシリアルナンバー等がある場合はご記載ください。
+                -#   = link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", target: "_blank" do
+                -#     偽ブランドの販売
+                -#   は犯罪であり処罰される可能性があります。
+                -# %p.text
+                -#   また、出品をもちまして
+                -#   = link_to "https://www.mercari.com/jp/seller_terms/", target: "_blank" do
+                -#     加盟店規約
+                -#   に同意したことになります。
+              = f.submit "スクールを追加する", class:"red-button"
+              = link_to "", class: "gray-button" do
+                もどる
+
+-# = render partial: 'schools/footer', locals: { }

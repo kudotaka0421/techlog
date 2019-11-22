@@ -9,6 +9,10 @@
     - breadcrumb :school_show
     = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
 
+    - when ['schools','new']
+    - breadcrumb :school_new
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
     - when ['locations','show']
     - breadcrumb :location_show
     = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "

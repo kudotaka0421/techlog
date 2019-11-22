@@ -7,6 +7,11 @@ crumb :school_show do
   parent :top
 end
 
+crumb :school_new do
+  link "スクール追加", new_school_path
+  parent :top
+end
+
 crumb :location_show do
   @location = Location.find(params[:id])
   link "#{@location.name}のスクール", location_path
@@ -18,4 +23,6 @@ crumb :language_show do
   link "#{@language.name}が学べるスクール", location_path
   parent :top
 end
+
+
 
