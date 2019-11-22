@@ -40,15 +40,16 @@
             %td
               %ul
                 %li
-                  - @school.locations.each do |shool_location|
-                    = shool_location.name
+                  - @school.locations.each do |school_location|
+                    =link_to school_location.name,location_path(school_location)
           %tr
             %th 学べる言語
             %td
               %ul
                 %li
                   - @school.languages.each do |shool_language|
-                    = shool_language.name
+                    =link_to shool_language.name,language_path(shool_language)
+
               -# = link_to 'PHP', 'https://www.mercari.com/jp/brand/539/', class:"td__brand"
 
           %tr

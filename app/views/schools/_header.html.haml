@@ -32,7 +32,7 @@
         .lower-contents__right
           - if user_signed_in?
             .lower-contents__right__mypage
-              = link_to schools_path(current_user), class: "lower-contents__right__mypage__button" do
+              -# = link_to schools_path(current_user), class: "lower-contents__right__mypage__button" do
                 - if current_user.image_url.present?
                   = image_tag "#{current_user.avatar}", class: "header-user-icon"
                 - else
