@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_053611) do
+ActiveRecord::Schema.define(version: 2019_11_22_095458) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 2019_11_12_053611) do
     t.integer "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "rate"
+    t.string "content_good"
+    t.string "content_bad"
+    t.bigint "school_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_reviews_on_school_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "school_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,6 +102,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_053611) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "schools"
+  add_foreign_key "reviews", "users"
   add_foreign_key "school_languages", "languages"
   add_foreign_key "school_languages", "schools"
   add_foreign_key "school_locations", "locations"

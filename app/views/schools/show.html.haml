@@ -113,50 +113,50 @@
     .message-container
       .message-content
         %ul.message-items
-          %li
-            .list-left
-              .user-avater
-                = image_tag 'https://pbs.twimg.com/media/DCfvMY9U0AANOPV.png', class:"user-avater"
-            .list-right
-              .user-name
-                ここなつ
-              .user-message-body
-                .user-message-body__text
-                  縦18センチ
-                  横25センチ
-                  ショルダーの長さ、五段階の調整可能です。
-                  よろしくお願いします。
-                .user-message-body__icons
-                  .user-message-body__icons-left
-                    = fa_icon "clock", class:"icon-clock"
-                    %span ３日前
-                  .user-message-body__icons-right
-                    = fa_icon "flag-o", class:"icon-flag"
-                  .icon-balloon
-          %li
-            .list-left
-              .user-avater
-                = image_tag 'https://pbs.twimg.com/media/DDppx0lV0AA9mwJ.png', class:"user-avater"
-            .list-right
-              .user-name
-                まるこ
-              .user-message-body
-                .user-message-body__text
-                  欲しいです。
-                .user-message-body__icons
-                  .user-message-body__icons-left
-                    = fa_icon "clock", class:"icon-clock"
-                    %span ３日前
-                  .user-message-body__icons-right
-                    = fa_icon "flag-o", class:"icon-flag"
+          - @school.reviews. each do |review|
+            %li
+              .list-left
+                .user-avater
+                  -# = image_tag 'https://pbs.twimg.com/media/DCfvMY9U0AANOPV.png', class:"user-avater"
+                  = image_tag review.user.image_url, class: 'user-avater' if review.user.image_url.present?
+              .list-right
+                .user-name
+                  = review.user.nickname
+                .user-message-body
+                  .user-message-body__text
+                    = review.content_good
+                  .user-message-body__icons
+                    .user-message-body__icons-left
+                      = fa_icon "clock", class:"icon-clock"
+                      %span ３日前
+                    .user-message-body__icons-right
+                      = fa_icon "flag-o", class:"icon-flag"
+                    .icon-balloon
+            -# %li
+            -#   .list-left
+            -#     .user-avater
+            -#       = image_tag 'https://pbs.twimg.com/media/DDppx0lV0AA9mwJ.png', class:"user-avater"
+            -#   .list-right
+            -#     .user-name
+            -#       まるこ
+            -#     .user-message-body
+            -#       .user-message-body__text
+            -#         欲しいです。
+            -#       .user-message-body__icons
+            -#         .user-message-body__icons-left
+            -#           = fa_icon "clock", class:"icon-clock"
+            -#           %span ３日前
+            -#         .user-message-body__icons-right
+            -#           = fa_icon "flag-o", class:"icon-flag"
 
       .message-content
         %form.message-form
           %p
-            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
           %textarea
           %button
-            = link_to 'コメントする', '#', class:"comment-btn"
+            = link_to 'このスクールのレビューを投稿する', new_school_review_path(@school,@review), class:"comment-btn"
+
 
   .nav-link
     .nav-link-prev

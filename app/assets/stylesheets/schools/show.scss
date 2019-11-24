@@ -338,8 +338,12 @@
             background: #aaa;
             border: 1px solid #aaa;
             .comment-btn {
+              display: inline-block;
               color: #fff;
               text-decoration: none;
+              width: 100%;
+              height:100%;
+
             }
           }
         }
