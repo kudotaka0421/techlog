@@ -123,12 +123,23 @@
                 .user-name
                   = review.user.nickname
                 .user-message-body
+                  %h3 【評価点】
+                  .user-message-body__text
+                    = review.rate
+
+                  %h3 【スクールの良かった点】
                   .user-message-body__text
                     = review.content_good
+
+                  %h3 【スクールの悪かった点】
+                  .user-message-body__text
+                  = review.content_bad
+
                   .user-message-body__icons
                     .user-message-body__icons-left
                       = fa_icon "clock", class:"icon-clock"
-                      %span ３日前
+                      %span
+                      #{review.created_at.strftime("%Y/%m/%d %H:%M") }の投稿
                     .user-message-body__icons-right
                       = fa_icon "flag-o", class:"icon-flag"
                     .icon-balloon
