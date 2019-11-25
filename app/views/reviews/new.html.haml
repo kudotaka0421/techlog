@@ -2,6 +2,9 @@
   = render partial: 'schools/header', locals: { }
   = render partial: 'schools/bread-crumbs', locals: { }
 
+  -# .notifications
+  -#   - flash.each do |key, value|
+  -#     = content_tag(:div, value, class: key)
   %main.single-main
     %section.sell-main
       .sell-container

@@ -14,8 +14,9 @@ class ReviewsController < ApplicationController
     @school = School.find(params[:school_id])
     @review = Review.create(create_params)
     if @review.save
-      redirect_to school_path(@school)
+      redirect_to school_path(@school), notice: 'レビューが送信されました'
     else
+      flash.now[:alert] = '入力内容に不備があります。'
       render :new
     end
   end
