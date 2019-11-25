@@ -21,6 +21,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @school = School.find(params[:school_id])
+    @review = Review.find(params[:id])
+  end
+
+  def destroy
+  end
+
 
   private
 
