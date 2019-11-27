@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   resources :schools do
     resources :reviews
   end
+  post   '/like/:review_id' => 'likes#like',   as: 'like'
+  delete '/like/:review_id' => 'likes#unlike', as: 'unlike'
+
 
 end

@@ -6,7 +6,6 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
     @reviews = @school.reviews.includes(:user)
-
   end
 
 end

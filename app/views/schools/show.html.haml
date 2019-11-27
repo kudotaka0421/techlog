@@ -145,7 +145,7 @@
 
                   .user-message-body__icons
                     .user-message-body__icons-left
-                      = fa_icon "clock", class:"icon-clock"
+                      = render partial: "reviews/reviews", locals: { review: review}
                       %span
                       #{review.updated_at.strftime("%Y/%m/%d %H:%M") }の投稿
                     .user-message-body__icons-right
