@@ -126,7 +126,7 @@
                   = review.user.nickname
                 .user-message-body
                   %ul.user-message-body__list
-                    - if user_signed_in? && current_user.id == review.user_id
+                    - if user_signed_in? && current_user.id == review.user_id or current_user.admin?
                       %li
                         = link_to '編集', edit_school_review_path(review,school_id: review.school_id)
                       %li
