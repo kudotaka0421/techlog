@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   def update
     @school = School.find(params[:school_id])
     @review = Review.find(params[:id])
-    if @review.user_id == current_user.id && @review.update(review_params)
+    if (@review.user_id == current_user.id or current_user.admin?) && @review.update(review_params)
       redirect_to school_path(@school), notice: "編集が完了しました"
     else
       flash.now[:alert] = '編集内容に不備があります'
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
   def destroy
     @school = School.find(params[:school_id])
     @review = Review.find(params[:id])
-    if @review.user_id == current_user.id && @review.destroy
+    if (@review.user_id == current_user.id or current_user.admin?) && @review.destroy
       redirect_to school_path(@school), notice: "削除が完了しました"
     else
       flash.now[:alert] = '削除できませんでした'
