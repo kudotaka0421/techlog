@@ -147,7 +147,7 @@
                     .user-message-body__icons-left
                       = fa_icon "clock", class:"icon-clock"
                       %span
-                      #{review.created_at.strftime("%Y/%m/%d %H:%M") }の投稿
+                      #{review.updated_at.strftime("%Y/%m/%d %H:%M") }の投稿
                     .user-message-body__icons-right
                       = fa_icon "flag-o", class:"icon-flag"
                     .icon-balloon
@@ -168,12 +168,12 @@
             -#         .user-message-body__icons-right
             -#           = fa_icon "flag-o", class:"icon-flag"
 
-      .message-content
-        %form.message-form
-          %p
-            不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %button
-            = link_to 'このスクールのレビューを投稿する', new_school_review_path(@school,@review), class:"comment-btn"
+        .message-content
+          %form.message-form
+            %p
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %button
+              = link_to 'このスクールのレビューを投稿する', new_school_review_path(@school,@review), class:"comment-btn"
 
 
   .nav-link
