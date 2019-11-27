@@ -125,12 +125,12 @@
                 .user-name
                   = review.user.nickname
                 .user-message-body
-                  %ul.more_list
+                  %ul.user-message-body__list
                     - if user_signed_in? && current_user.id == review.user_id
                       %li
                         = link_to '編集', edit_school_review_path(review,school_id: review.school_id)
                       %li
-                        = link_to '削除', school_review_path(review), method: :delete
+                        = link_to '削除', school_review_path(review,school_id: review.school_id), method: :delete
                   %h3 【評価点】
                   .user-message-body__text
                     = review.rate

@@ -260,7 +260,7 @@
         ul {
           li {
             margin-top: 20px;
-            display: flex;
+            display: inline-block;
             .list-left {
               .user-avater {
                 width: 40px;
@@ -281,6 +281,20 @@
                 margin-left: 10px;
                 background-color: #EEF0F4;
                 border-radius: 10px;
+                &__list{
+                  font-size: 16px;
+                  text-align: right;
+                  a{
+                    text-decoration: none;
+                    padding: 0.5em 1em;
+                    margin: 2em 0;
+                    font-weight: bold;
+                    color: black;
+                    background: #FFF;
+                    border: solid 3px #404955;
+                    border-radius: 10px;
+                  }
+                }
                 &__text {
                   font-size: 14px;
                   display: inline-block;
