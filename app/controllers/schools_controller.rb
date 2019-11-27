@@ -4,9 +4,9 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @review = Review.new
-    @reviews = School.order("id ASC")
     @school = School.find(params[:id])
+    @reviews = @school.reviews.includes(:user)
+
   end
 
 end

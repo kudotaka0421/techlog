@@ -5,7 +5,7 @@
     %section.sell-main
       .sell-container
         .sell-container__inner
-          %h2.sell-container__inner__title #{@school.name}のレビューを入力
+          %h2.sell-container__inner__title #{@school.name}のレビューを編集
           = form_for([@school, @review] , html:{class: "sell-form"})do |f|
             .sell-content
               .form-group
@@ -27,7 +27,7 @@
                 = f.text_area :content_bad, class: "textarea-default", placeholder: "例)テックコネクトというSkypeのようなチャットツールを用いて、いつでもメンターに質問できると宣伝されていますが、最近は受講者が多く、メンターさんに繋がるまで1時間以上待機するケースも多いです。（必須 200文字以内）", rows: "5"
             .sell-content.sell-btn-box
               %div
-              = f.submit "レビューを投稿する", class:"red-button"
+              = f.submit "編集を反映させる", class:"red-button"
               = link_to "", class: "gray-button" do
                 もどる
 
