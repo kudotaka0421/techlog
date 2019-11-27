@@ -66,7 +66,7 @@
           .items
             - @schools.each do |school|
               .item
-                = link_to school_path(school), class: "item-link" do
+                = link_to school_path(school), class: "item-link" ,'data-turbolinks': false do
                   = image_tag "#{school.image_url}", class:"item__image"
                   -# %span.item__price
                   -#   = "¥#{me_item.total_price.to_s(:delimited)}"

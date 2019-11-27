@@ -69,3 +69,6 @@ gem 'mini_magick'
 gem 'rails-i18n'
 gem 'gretel'
 gem 'pry-rails'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
