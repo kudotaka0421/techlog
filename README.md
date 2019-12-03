@@ -1,3 +1,11 @@
+# techlog アプリ概要
+
+
+
+
+
+
+
 # techlog DB設計
 
 ## likesテーブル
