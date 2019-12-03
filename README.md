@@ -1,6 +1,5 @@
 # techlog アプリケーションの概要概要
-
-
+https://gyazo.com/d7ec80bd73a1291e204c81d338f9f3ac
 # techlog アプリケーションの機能概要
 
 ・ユーザー新規登録、ログイン機能
