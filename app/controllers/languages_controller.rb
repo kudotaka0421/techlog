@@ -1,11 +1,17 @@
 class LanguagesController < ApplicationController
+
+  before_action :set_language_school
+
   def index
-    @schools = School.order("id ASC").limit(3)
-    @language = Language.find(params[:id])
   end
 
   def show
-    @schools = School.order("id ASC").limit(3)
+  end
+
+  private
+  def set_language_school
+    @schools = School.order("created_at ASC")
     @language = Language.find(params[:id])
   end
+
 end
