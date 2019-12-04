@@ -1,5 +1,5 @@
 # techlog アプリケーションの概要概要
-
+![FireShot Capture 067 - techlog - localhost](https://user-images.githubusercontent.com/54498213/70106404-e7497080-1686-11ea-90e2-b3cb79541425.png)
 # techlog アプリケーションの機能概要
 
 ・ユーザー新規登録、ログイン機能
