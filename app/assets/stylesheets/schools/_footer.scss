@@ -8,7 +8,7 @@ footer{
     width: 1020px;
     margin: 0 auto;
     display: flex;
-    &__title{   //メルカリについての列
+    &__title{
       padding-right: 40px;
       margin-top: 18px;
       &__text{
@@ -51,7 +51,7 @@ footer{
         }
       }
     }
-    &__title{   //ヘルプ＆ガイドの列（メルカリについてと同記述、消す？）
+    &__title{
       padding-right: 40px;
       margin-top: 18px;
       &__text{
@@ -74,7 +74,7 @@ footer{
         }
       }
     }
-    &__title{   //プライバシーと利用規約の列
+    &__title{
       padding-right: 40px;
       margin-top: 18px;
       &__text{
@@ -125,7 +125,7 @@ footer{
         }
       }
     }
-    &__title-country{   //国
+    &__title-country{
       padding-right: 40px;
       margin-top: 18px;
       &__text{

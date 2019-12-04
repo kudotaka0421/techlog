@@ -71,4 +71,6 @@ gem 'gretel'
 gem 'pry-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'carrierwave'
+# gem 'rmagick', '4.0.0'
 

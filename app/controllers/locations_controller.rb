@@ -1,11 +1,15 @@
 class LocationsController < ApplicationController
+
+  before_action :set_location_school
+
   def index
-    @schools = School.order("id ASC").limit(3)
-    @location = Location.find(params[:id])
   end
 
   def show
-    @schools = School.order("id ASC").limit(3)
+  end
+
+  def set_location_school
+    @schools = School.order("created_at ASC")
     @location = Location.find(params[:id])
   end
 
